@@ -8,9 +8,8 @@ The MoguaSDK is compatible with apps supporting Android API level 19 or above.
 
 1. Make sure inside the `repositories` block, `mavenCentral()` is added：
 
-```Groovy
-// project/build.gradle
-
+[//]: # (language="Groovy", target="project/build.gradle")
+```groovy
 allprojects {
     repositories {
         // ...
@@ -18,9 +17,8 @@ allprojects {
     }
 }
 ```
-```Kotlin
-// project/settings.gradle.kts
-
+[//]: # (language="Kotlin", target="project/settings.gradle.kts")
+```kotlin
 pluginManagement {
     repositories {
         // ...
@@ -38,17 +36,15 @@ dependencyResolutionManagement {
 
 2. In the `dependencies` block, add:
 
-```Groovy
-// app/build.gradle
-
+[//]: # (language="Groovy", target="app/build.gradle")
+```groovy
 dependencies {
     // ...
     implementation 'sg.omnimind.mogua:mogua-android-sdk:0.4.0'
 }
 ```
-```Kotlin
-// app/build.gradle.kts
-
+[//]: # (language="Kotlin", target="app/build.gradle.kts")
+```kotlin
 dependencies {
   // ...
   implementation("sg.omnimind.mogua:mogua-android-sdk:0.4.0")
@@ -63,7 +59,8 @@ You need to initialize the SDK before any usage.
 
 Assuming that the entry point of your application is a subclass of `Activity`, you can initialize the SDK by overriding the `onCreate` method:
 
-```Java
+[//]: # (language="Java", target="MainActivity.java")
+```java
 public class MainActivity extends Activity {
 
     @Override
@@ -74,7 +71,8 @@ public class MainActivity extends Activity {
     }
 }
 ```
-```Kotlin
+[//]: # (language="Kotlin", target="MainActivity.kt")
+```kotlin
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
 The `Mogua.init` method description:
 
-```Java
+```java
 interface Mogua {
     /**
      * Initialize the MoguaSDK.
@@ -107,7 +105,8 @@ interface Mogua {
 
 After initialization, you can asynchronously retrieve the parameters carried during installation (eg. Submit from landing pages).
 
-```Java
+[//]: # (language="Java")
+```java
 Mogua.getData(new MoguaCallback() {
 
     @Override
@@ -121,7 +120,8 @@ Mogua.getData(new MoguaCallback() {
     }
 })
 ```
-```Kotlin
+[//]: # (language="Kotlin")
+```kotlin
 Mogua.getData(object: MoguaCallback {
 
     override fun onData(data: HashMap<String, Any>) {
