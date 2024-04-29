@@ -1,3 +1,4 @@
+[//]: # (redundant)
 # Android Integration
 
 The MoguaSDK is compatible with apps supporting Android API level 19 or above.
@@ -97,7 +98,7 @@ interface Mogua {
 }
 ```
 
-> Placeholder: *Privacy Policy for Clipboard Authorization*
+[//]: # (Placeholder: Privacy Policy for Clipboard Authorization)
 
 ---
 
