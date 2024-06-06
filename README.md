@@ -86,6 +86,7 @@ class MainActivity : AppCompatActivity() {
 
 The `Mogua.init` method description:
 
+[//]: # (language="Java")
 ```java
 interface Mogua {
     /**
@@ -106,18 +107,26 @@ interface Mogua {
 
 After initialization, you can asynchronously retrieve the parameters carried during installation (eg. Submit from landing pages).
 
-[//]: # (language="Java")
+[//]: # (language="Java", target="Example")
 ```java
 Mogua.getData(new MoguaCallback() {
-
+    
+    /**
+     * Callback when data fetch is completed.
+     * @param data Key-value pair parameters passed to the app from webpage. If no parameters are provided, an empty HashMap object is returned.
+     */
     @Override
     public void onData(HashMap<String, Object> data) {
-        // data: Parameters passed from the web to the app. If no parameters are provided, an empty HashMap object is returned.
+        // Use data to retrieve the user's channel or referrer, etc.
     }
 
+    /**
+     * Callback when an exception occurs.
+     * @param e The exception.
+     */
     @Override
     public void onError(Exception e) {
-        // e: The exception that occurred.
+        // ...
     }
 })
 ```
@@ -125,12 +134,20 @@ Mogua.getData(new MoguaCallback() {
 ```kotlin
 Mogua.getData(object: MoguaCallback {
 
+    /**
+     * Callback when data fetch is completed.
+     * @param data Key-value pair parameters passed to the app from webpage. If no parameters are provided, an empty HashMap object is returned.
+     */
     override fun onData(data: HashMap<String, Any>) {
-        // data: Parameters passed from the web to the app. If no parameters are provided, an empty HashMap object is returned.
+        // Use data to retrieve the user's channel or referrer, etc.
     }
 
+    /**
+     * Callback when an exception occurs.
+     * @param e The exception.
+     */
     override fun onError(e: Exception) {
-        // e: The exception that occurred.
+        // ...
     }
 })
 ```
