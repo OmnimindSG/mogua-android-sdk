@@ -130,7 +130,7 @@ Mogua.getData(new MoguaCallback() {
     }
 })
 ```
-[//]: # (language="Kotlin")
+[//]: # (language="Kotlin", target="Example")
 ```kotlin
 Mogua.getData(object: MoguaCallback {
 
