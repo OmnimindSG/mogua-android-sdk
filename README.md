@@ -68,7 +68,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // ...
-        Mogua.init(this, "mogua-sdk-app-key", true);
+        // You can find the [appKey] at Mogua Dashboard.
+        Mogua.init(this, "${appKey}", true);
     }
 }
 ```
@@ -79,7 +80,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // ...
-        Mogua.init(this, "mogua-sdk-app-key", true)
+        // You can find the [appKey] at Mogua Dashboard.
+        Mogua.init(this, "${appKey}", true)
     }
 }
 ```
